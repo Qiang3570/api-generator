@@ -3,13 +3,18 @@ plugins {
     id 'org.jetbrains.intellij' version '0.6.5'
 }
 
+
 group 'site.forgus.plugins'
 version '2020.09.10'
 
 
 repositories {
+    maven {
+        url 'https://maven.aliyun.com/repository/public'
+    }
     mavenCentral()
 }
+
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
@@ -20,6 +25,7 @@ dependencies {
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2020.3.2'
+    plugins = ['com.intellij.java']
 }
 patchPluginXml {
     changeNotes """
